@@ -76,9 +76,31 @@ public class NominaADT {
     public void setRutaArchivo(String rutaArchivo) {
         this.rutaArchivo = rutaArchivo;
     }
+   public void calcularSueldo(){
+       for(int i=0; i<arreglo.getLongitud() ; i++){
+           System.out.println(nomina.getElemento(i));
+           System.out.println(nomina.getElemento(i).calcularSueldo());       
+       }
+    }
 
+    public void obtener_max_min (){
+        int min = 299999;
+        int max= 0;
+        Empleado TrabMax= null;
+        Empleado TrabMin= null;
+        
+       for(Empleado e: nomina.elementos){
+            if(e.getAnioIngreso()>max){
+              max= e.getAnioIngreso();
+              TrabMax=e;
+            }
+            if (e.getAnioIngreso()<min){
+              min= e.getAnioIngreso();
+              TrabMin = e;
+            }
 
-    
+           System.out.println("Trabajador mas antiguo: " + TrabMax);
+           System.out.println("Trabajador mas reciente: " + TrabMin);
 
-    
+       }   
 }
